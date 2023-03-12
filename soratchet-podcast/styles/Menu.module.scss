@@ -1,5 +1,9 @@
 .menu {
-  #menu-button .line {
+  width: 40px;
+  background-color: red;
+  height: 40px;
+
+  .line {
     width: 30px;
     height: 3px;
     background-color: black;
@@ -7,12 +11,12 @@
     transition: all 0.3s ease;
   }
 
-  #menu-button.close .line {
+  .close .line {
     background-color: transparent;
   }
 
-  #menu-button.close .line:before,
-  #menu-button.close .line:after {
+  .close .line:before,
+  .close .line:after {
     content: "";
     position: absolute;
     width: 30px;
@@ -20,11 +24,11 @@
     background-color: black;
   }
 
-  #menu-button.close .line:before {
+  .close .line:before {
     transform: rotate(45deg);
   }
 
-  #menu-button.close .line:after {
+  .close .line:after {
     transform: rotate(-45deg);
   }
 
