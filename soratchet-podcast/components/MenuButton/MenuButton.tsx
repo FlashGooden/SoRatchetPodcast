@@ -13,7 +13,7 @@ import React from 'react'
 
 export function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
+  const btnRef = React.useRef<HTMLButtonElement>(null)
 
   return (
     <>
