@@ -1,9 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
 import { NavigationLinks } from "../components/NavigationLinks/NavigationLinks";
 import NavigationContainer from "../components/NavigationContainer/NavigationContainer";
-import heroPic from "../public/images/trap-museum.jpeg";
-import banditPic from "../public/images/bandit-pic.jpg";
 import { motion } from "framer-motion";
 import HeroImage from "../components/HeroImage/HeroImage";
 
