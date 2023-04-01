@@ -12,9 +12,11 @@ export default function HeroImage() {
       <Image
         src={isHovering ? heroPic : banditPic}
         alt={"Group Picture"}
-        className="relative m-auto mt-9 w-full px-5 filter grayscale z-30 transition-shadow duration-300"
+        className="relative m-auto mt-9 w-full px-5 filter grayscale transition-shadow duration-300"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
+        // figure out a slow transition for image
+        // style={{ opacity: 1, transition: "opacity 0.5s ease-in-out" }}
       />
     );
   };
