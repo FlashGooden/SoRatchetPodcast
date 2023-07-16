@@ -1,0 +1,29 @@
+.backgroundContainer {
+  background-position-y: -545px;
+  height: 30rem;
+
+  @media (min-width: 450px) {
+    background-position-y: 540px;
+  }
+
+  @media (min-width: 615px) {
+    background-position-y: 650px;
+  }
+
+  @media (min-width: 760px) {
+    background-position-y: 45%;
+  }
+
+  @media (min-width: 1230px) {
+    background-position-y: 26%;
+  }
+}
+
+.buttonStyles {
+  background-color: rgba(251, 5, 132, 1) !important;
+  position: absolute !important;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

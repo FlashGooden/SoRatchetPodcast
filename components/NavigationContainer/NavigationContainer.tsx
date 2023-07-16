@@ -1,34 +1,58 @@
 import React from "react";
-import { SocialIcon } from "react-social-icons";
-import { useToggle } from "react-use";
-import { FadeAndScale } from "../../utils/fadeAndScale";
+import { FadeAndScale } from "../../utils/FadeAndScale";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
+  useDisclosure,
+} from "@chakra-ui/react";
+import styles from "./NavigationContainer.module.scss";
 
-export default function NavigationContainer() {
-  const [closed, toggle] = useToggle(true);
-
-  const openMenuHandler = () => {
-    toggle(false);
+export function NavigationContainer() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const drawerComponent = () => {
+    return (
+      <Drawer colorScheme={"facebook"} onClose={onClose} isOpen={isOpen}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <button type="button" aria-label="Close Menu" onClick={onClose}>
+            <svg
+              className="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
+          <DrawerBody>
+            <p>Some contents...</p>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    );
   };
-
-  const closeMenuHandler = () => {
-    toggle(true);
-  };
-
   return (
-    <div className="sm:hidden flex fixed bg-black top-0 right-0 left-0 pt-2 pb-2 z-20 justify-between pr-3 pl-3">
-      <div className="flex space-x-1">
-        <SocialIcon network="instagram" style={{ height: 24, width: 24 }} />
-        <SocialIcon network="facebook" style={{ height: 24, width: 24 }} />
-        <SocialIcon network="twitter" style={{ height: 24, width: 24 }} />
-      </div>
-      <div>
-        {closed ? (
-          <FadeAndScale>
+    <nav id="nav">
+      <div
+        className={`${styles.chakraSlide} sm:hidden absolute flex bg-transparent top-0 right-0 mt-2 mb-2 z-20 justify-between mr-3 ml-3 text-white`}
+      >
+        <FadeAndScale>
+          <>
             <button
               type="button"
               aria-label="Open Menu"
               className="nextra-hamburger -nx-mr-2 nx-rounded nx-p-2 active:nx-bg-gray-400/20 md:nx-hidden"
-              onClick={openMenuHandler}
+              onClick={onOpen}
             >
               <svg
                 fill="none"
@@ -62,32 +86,10 @@ export default function NavigationContainer() {
                 </g>
               </svg>
             </button>
-          </FadeAndScale>
-        ) : (
-          <FadeAndScale>
-            <button
-              type="button"
-              aria-label="Close Menu"
-              onClick={closeMenuHandler}
-            >
-              <svg
-                className="w-6 h-6"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M18 6L6 18M6 6L18 18"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          </FadeAndScale>
-        )}
+            {drawerComponent()}
+          </>
+        </FadeAndScale>
       </div>
-    </div>
+    </nav>
   );
 }
