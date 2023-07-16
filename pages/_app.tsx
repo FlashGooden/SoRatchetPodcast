@@ -16,6 +16,18 @@ const fonts = {
   body: "Typeka",
 };
 
+const components = {
+  Drawer: {
+    baseStyle: {
+      backgroundColor: "red",
+      color: "red",
+    },
+    defaultProps: {
+      colorScheme: "green",
+    },
+  },
+};
+
 const config = {
   useSystemColorMode: false,
   initialColorMode: "dark",
@@ -28,7 +40,7 @@ const config = {
   },
 };
 
-const theme = extendTheme({ config, colors, fonts });
+const theme = extendTheme({ config, colors, components, fonts });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

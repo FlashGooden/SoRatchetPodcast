@@ -11,11 +11,21 @@ module.exports = {
     extend: {
       colors: {
         pink: {
-          950: "#F72C7A",
+          950: "#FB0584",
         },
-        height: {
-          97: "97%",
+        gray: {
+          950: "#8792A7",
         },
+      },
+      height: {
+        30: "30rem",
+        97: "97%",
+      },
+      maxHeight: {
+        48: "48rem",
+      },
+      backgroundImage: {
+        trap_museum: "url('../public/images/trap-museum.jpeg')",
       },
     },
   },

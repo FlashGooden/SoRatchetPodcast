@@ -37,3 +37,7 @@ next-env.d.ts
 
 # vs code settings
 .vscode
+
+# intellij settings
+.idea/
+

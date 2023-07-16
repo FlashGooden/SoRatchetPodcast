@@ -15,9 +15,6 @@ export const FadeAndScale = ({ children }: FadeAndScaleProps) => {
       transition: {
         duration: 1,
         ease: "easeInOut",
-        onComplete: () => {
-          // return { scale: 1 };
-        },
       },
     };
   };
