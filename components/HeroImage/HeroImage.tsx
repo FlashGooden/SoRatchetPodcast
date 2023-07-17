@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import banditPic from "/public/images/bandit-pic.jpg";
 
 export default function HeroImage() {
   const HoverImage = () => {
     return (
       <Image
-        src={"/images/bandit-pic"}
+        src={banditPic}
         alt={"Group Picture"}
         className="w-full h-full object-cover object-center"
       />
