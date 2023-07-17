@@ -54,7 +54,7 @@ export default function Home() {
           scrollToEpisodes={scrollToEpisodes}
           scrollToDonate={scrollToDonate}
         />
-        <PodbeanPlayer isLargerThan640={isLargerThan640} />
+        <PodbeanPlayer />
         <Episodes episodesRef={episodesRef} />
         <Support donateRef={donateRef} />
       </main>
