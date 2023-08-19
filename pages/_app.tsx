@@ -1,6 +1,6 @@
 import "../styles/globals.scss";
 import type { AppProps } from "next/app";
-import { ChakraProvider, StyleFunctionProps } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 
 const colors = {
@@ -32,7 +32,7 @@ const config = {
   useSystemColorMode: false,
   initialColorMode: "dark",
   styles: {
-    global: (props: StyleFunctionProps) => ({
+    global: () => ({
       body: {
         fontFamily: '"Typeka", "Noto", sans-serif"',
       },

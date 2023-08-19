@@ -1,32 +1,29 @@
 import React, { useEffect } from "react";
 
-declare global {
-  interface Window {
-    onSpotifyIframeApiReady: (IFrameAPI: any) => void;
-  }
+interface Window {
+  onSpotifyIframeApiReady?: () => void;
 }
 
 export default function Episodes() {
   useEffect(() => {
-    window.onSpotifyIframeApiReady = (IFrameAPI) => {
-      console.log("hello");
-      const element = document.getElementById("embed-iframe");
-      const options = {
-        width: "60%",
-        height: "200",
-        color: "blue",
-        uri: "spotify:episode:1x8BWkVrCYulHreLBrVtzk",
-      };
-      const callback = (EmbedController: any) => {
-        console.log(EmbedController);
-        document.querySelectorAll(".episode").forEach((episode: any) => {
-          episode.addEventListener("click", () => {
-            // click event handler logic goes here
-            EmbedController.loadUri(episode.dataset.spotifyId);
-          });
-        });
-      };
-      IFrameAPI.createController(element, options, callback);
+    (window as Window).onSpotifyIframeApiReady = () => {
+      // const element = document.getElementById("embed-iframe");
+      // const options = {
+      //   width: "60%",
+      //   height: "200",
+      //   color: "blue",
+      //   uri: "spotify:episode:1x8BWkVrCYulHreLBrVtzk",
+      // };
+      // const callback = (EmbedController: any) => {
+      //   console.log(EmbedController);
+      //   document.querySelectorAll(".episode").forEach((episode: any) => {
+      //     episode.addEventListener("click", () => {
+      //       // click event handler logic goes here
+      //       EmbedController.loadUri(episode.dataset.spotifyId);
+      //     });
+      //   });
+      // };
+      // IFrameAPI.createController(element, options, callback)
     };
     console.log(window);
   });

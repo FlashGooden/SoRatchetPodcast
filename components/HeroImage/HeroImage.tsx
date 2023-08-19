@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import banditPic from "../../public/images/bandit-pic.jpg";
+import banditPic from "/public/images/bandit-pic.jpg";
 
 export default function HeroImage() {
   const HoverImage = () => {

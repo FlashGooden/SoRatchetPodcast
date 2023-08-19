@@ -3,15 +3,14 @@ import Head from "next/head";
 import Script from "next/script";
 import { HeroContainer } from "../components/HeroContainer/HeroContainer";
 import Episodes from "../components/EpisodeContainer/Episodes/Episodes";
-import { useMediaQuery } from "@chakra-ui/react";
 import PodbeanPlayer from "../components/PodbeanPlayer/PodbeanPlayer";
 import Support from "../components/Support/Support";
 
 export default function Home() {
-  const [isLargerThan640] = useMediaQuery("(min-width: 640px)", {
-    ssr: true,
-    fallback: false, // return false on the server, and re-evaluate on the client side
-  });
+  // const [isLargerThan640] = useMediaQuery("(min-width: 640px)", {
+  //   ssr: true,
+  //   fallback: false, // return false on the server, and re-evaluate on the client side
+  // });
 
   const episodesRef = useRef(null);
   const donateRef = useRef(null);
@@ -54,7 +53,7 @@ export default function Home() {
           scrollToEpisodes={scrollToEpisodes}
           scrollToDonate={scrollToDonate}
         />
-        <PodbeanPlayer isLargerThan640={isLargerThan640} />
+        <PodbeanPlayer />
         <Episodes episodesRef={episodesRef} />
         <Support donateRef={donateRef} />
       </main>
